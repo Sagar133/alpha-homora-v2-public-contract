@@ -1,4 +1,5 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12;
 
 interface MockUniswapV2Router02IUniswapV2Factory {
   event PairCreated(address indexed token0, address indexed token1, address pair, uint);
@@ -116,9 +117,9 @@ interface MockUniswapV2Router02IUniswapV2Pair {
 }
 
 interface MockUniswapV2Router02IUniswapV2Router01 {
-  function factory() external pure returns (address);
+  function factory() external returns (address);
 
-  function WETH() external pure returns (address);
+  function WETH() external returns (address);
 
   function addLiquidity(
     address tokenA,
@@ -359,8 +360,8 @@ interface MockUniswapV2Router02IWETH {
 contract MockUniswapV2Router02 is MockUniswapV2Router02IUniswapV2Router02 {
   using MockUniswapV2Router02SafeMath for uint;
 
-  address public immutable override factory;
-  address public immutable override WETH;
+  address public override factory;
+  address public override WETH;
 
   modifier ensure(uint deadline) {
     require(deadline >= block.timestamp, 'UniswapV2Router: EXPIRED');
@@ -535,7 +536,7 @@ contract MockUniswapV2Router02 is MockUniswapV2Router02IUniswapV2Router02 {
     bytes32 s
   ) external virtual override returns (uint amountA, uint amountB) {
     address pair = MockUniswapV2Router02UniswapV2Library.pairFor(factory, tokenA, tokenB);
-    uint value = approveMax ? uint(-1) : liquidity;
+    uint value = approveMax ? uint256(int(-1)) : liquidity;
     MockUniswapV2Router02IUniswapV2Pair(pair).permit(
       msg.sender,
       address(this),
@@ -569,7 +570,7 @@ contract MockUniswapV2Router02 is MockUniswapV2Router02IUniswapV2Router02 {
     bytes32 s
   ) external virtual override returns (uint amountToken, uint amountETH) {
     address pair = MockUniswapV2Router02UniswapV2Library.pairFor(factory, token, WETH);
-    uint value = approveMax ? uint(-1) : liquidity;
+    uint value = approveMax ? uint256(int(-1)) : liquidity;
     MockUniswapV2Router02IUniswapV2Pair(pair).permit(
       msg.sender,
       address(this),
@@ -629,7 +630,7 @@ contract MockUniswapV2Router02 is MockUniswapV2Router02IUniswapV2Router02 {
     bytes32 s
   ) external virtual override returns (uint amountETH) {
     address pair = MockUniswapV2Router02UniswapV2Library.pairFor(factory, token, WETH);
-    uint value = approveMax ? uint(-1) : liquidity;
+    uint value = approveMax ? uint256(int(-1)) : liquidity;
     MockUniswapV2Router02IUniswapV2Pair(pair).permit(
       msg.sender,
       address(this),

@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/IERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/SafeERC20.sol';
+import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
+import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
 
 import '../utils/ERC1155NaiveReceiver.sol';
 import '../../interfaces/IBank.sol';
@@ -23,7 +23,7 @@ abstract contract BasicSpell is ERC1155NaiveReceiver {
     IBank _bank,
     address _werc20,
     address _weth
-  ) public {
+  ) {
     bank = _bank;
     werc20 = IWERC20(_werc20);
     weth = _weth;
@@ -37,7 +37,7 @@ abstract contract BasicSpell is ERC1155NaiveReceiver {
   /// NOTE: This is safe because spell is never built to hold fund custody.
   function ensureApprove(address token, address spender) internal {
     if (!approved[token][spender]) {
-      IERC20(token).safeApprove(spender, uint(-1));
+      IERC20(token).safeApprove(spender, uint256(int(-1)));
       approved[token][spender] = true;
     }
   }
@@ -101,11 +101,11 @@ abstract contract BasicSpell is ERC1155NaiveReceiver {
   /// @dev Internal call to put collateral tokens in the bank.
   /// @param token The token to put in the bank.
   /// @param amount The amount to put in the bank.
-  function doPutCollateral(address token, uint amount) internal {
+  function doPutCollateral(address token, uint amount) public {
     if (amount > 0) {
       ensureApprove(token, address(werc20));
       werc20.mint(token, amount);
-      bank.putCollateral(address(werc20), uint(token), amount);
+      bank.putCollateral(address(werc20), uint(uint160(token)), amount);
     }
   }
 
@@ -114,10 +114,10 @@ abstract contract BasicSpell is ERC1155NaiveReceiver {
   /// @param amount The amount to take back.
   function doTakeCollateral(address token, uint amount) internal {
     if (amount > 0) {
-      if (amount == uint(-1)) {
+      if (amount == uint256(int(-1))) {
         (, , , amount) = bank.getCurrentPositionInfo();
       }
-      bank.takeCollateral(address(werc20), uint(token), amount);
+      bank.takeCollateral(address(werc20), uint(uint160(token)), amount);
       werc20.burn(token, amount);
     }
   }

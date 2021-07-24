@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC1155/ERC1155.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/SafeERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/utils/ReentrancyGuard.sol';
+import '@openzeppelin/contracts/token/ERC1155/ERC1155.sol';
+import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
+import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 
 import '../utils/HomoraMath.sol';
 import '../../interfaces/IERC20Wrapper.sol';
@@ -23,11 +23,11 @@ contract WStakingRewards is ERC1155('WStakingRewards'), ReentrancyGuard, IERC20W
     address _staking,
     address _underlying,
     address _reward
-  ) public {
+  ) {
     staking = _staking;
     underlying = _underlying;
     reward = _reward;
-    IERC20(_underlying).safeApprove(_staking, uint(-1));
+    IERC20(_underlying).safeApprove(_staking, uint256(int(-1)));
   }
 
   /// @dev Return the underlying ERC20 for the given ERC1155 token id.
@@ -54,7 +54,7 @@ contract WStakingRewards is ERC1155('WStakingRewards'), ReentrancyGuard, IERC20W
   /// @param id Token id to burn
   /// @param amount Token amount to burn
   function burn(uint id, uint amount) external nonReentrant returns (uint) {
-    if (amount == uint(-1)) {
+    if (amount == uint256(int(-1))) {
       amount = balanceOf(msg.sender, id);
     }
     _burn(msg.sender, id, amount);

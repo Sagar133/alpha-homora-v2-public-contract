@@ -1,4 +1,5 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12;
 
 interface MockUniswapV2FactoryIUniswapV2Factory {
   event PairCreated(address indexed token0, address indexed token1, address pair, uint);
@@ -277,7 +278,7 @@ contract UniswapV2ERC20 {
     address to,
     uint value
   ) external returns (bool) {
-    if (allowance[from][msg.sender] != uint(-1)) {
+    if (allowance[from][msg.sender] != uint256(int(-1))) {
       allowance[from][msg.sender] = allowance[from][msg.sender].sub(value);
     }
     _transfer(from, to, value);
@@ -394,7 +395,7 @@ contract MockUniswapV2FactoryUniswapV2Pair is UniswapV2ERC20 {
     uint112 _reserve0,
     uint112 _reserve1
   ) private {
-    require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');
+    require(balance0 <= uint256(int(-1)) && balance1 <= uint256(int(-1)), 'UniswapV2: OVERFLOW');
     uint32 blockTimestamp = uint32(block.timestamp % 2**32);
     uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired
     if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {

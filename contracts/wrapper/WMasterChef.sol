@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC1155/ERC1155.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/SafeERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/utils/ReentrancyGuard.sol';
+import '@openzeppelin/contracts/token/ERC1155/ERC1155.sol';
+import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
+import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 
 import '../utils/HomoraMath.sol';
 import '../../interfaces/IERC20Wrapper.sol';
@@ -18,7 +18,7 @@ contract WMasterChef is ERC1155('WMasterChef'), ReentrancyGuard, IERC20Wrapper {
   IMasterChef public immutable chef; // Sushiswap masterChef
   IERC20 public immutable sushi; // Sushi token
 
-  constructor(IMasterChef _chef) public {
+  constructor(IMasterChef _chef) {
     chef = _chef;
     sushi = IERC20(_chef.sushi());
   }
@@ -59,9 +59,9 @@ contract WMasterChef is ERC1155('WMasterChef'), ReentrancyGuard, IERC20Wrapper {
   function mint(uint pid, uint amount) external nonReentrant returns (uint) {
     (address lpToken, , , ) = chef.poolInfo(pid);
     IERC20(lpToken).safeTransferFrom(msg.sender, address(this), amount);
-    if (IERC20(lpToken).allowance(address(this), address(chef)) != uint(-1)) {
+    if (IERC20(lpToken).allowance(address(this), address(chef)) != uint256(int(-1))) {
       // We only need to do this once per pool, as LP token's allowance won't decrease if it's -1.
-      IERC20(lpToken).safeApprove(address(chef), uint(-1));
+      IERC20(lpToken).safeApprove(address(chef), uint256(int(-1)));
     }
     chef.deposit(pid, amount);
     (, , , uint sushiPerShare) = chef.poolInfo(pid);
@@ -75,7 +75,7 @@ contract WMasterChef is ERC1155('WMasterChef'), ReentrancyGuard, IERC20Wrapper {
   /// @param amount Token amount to burn
   /// @return The pool id that that you will receive LP token back.
   function burn(uint id, uint amount) external nonReentrant returns (uint) {
-    if (amount == uint(-1)) {
+    if (amount == uint256(int(-1))) {
       amount = balanceOf(msg.sender, id);
     }
     (uint pid, uint stSushiPerShare) = decodeId(id);

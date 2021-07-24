@@ -1,4 +1,5 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12;
 
 contract MockWETH {
   string public name = 'Wrapped Ether';
@@ -25,7 +26,7 @@ contract MockWETH {
   function withdraw(uint wad) public {
     require(balanceOf[msg.sender] >= wad);
     balanceOf[msg.sender] -= wad;
-    msg.sender.transfer(wad);
+    payable(msg.sender).transfer(wad);
     emit Withdrawal(msg.sender, wad);
   }
 
@@ -50,7 +51,7 @@ contract MockWETH {
   ) public returns (bool) {
     require(balanceOf[src] >= wad);
 
-    if (src != msg.sender && allowance[src][msg.sender] != uint(-1)) {
+    if (src != msg.sender && allowance[src][msg.sender] != uint256(int(-1))) {
       require(allowance[src][msg.sender] >= wad);
       allowance[src][msg.sender] -= wad;
     }

@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/ERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/cryptography/MerkleProof.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/math/SafeMath.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/utils/ReentrancyGuard.sol';
+import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
+import '@openzeppelin/contracts/utils/cryptography/MerkleProof.sol';
+import '@openzeppelin/contracts/utils/math/SafeMath.sol';
+import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 import './Governable.sol';
 import '../interfaces/ICErc20.sol';
 import '../interfaces/IWETH.sol';
@@ -26,13 +26,13 @@ contract SafeBoxETH is Governable, ERC20, ReentrancyGuard {
     string memory _name,
     string memory _symbol
   ) public ERC20(_name, _symbol) {
-    _setupDecimals(_cToken.decimals());
+    //_setupDecimals(_cToken.decimals());
     IWETH _weth = IWETH(_cToken.underlying());
     __Governable__init();
     cToken = _cToken;
     weth = _weth;
     relayer = msg.sender;
-    _weth.approve(address(_cToken), uint(-1));
+    _weth.approve(address(_cToken), uint256(int(-1)));
   }
 
   function setRelayer(address _relayer) external onlyGov {

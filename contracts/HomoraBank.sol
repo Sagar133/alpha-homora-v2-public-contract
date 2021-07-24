@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/IERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/SafeERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC1155/IERC1155.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/math/SafeMath.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/math/Math.sol';
+import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
+import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
+import '@openzeppelin/contracts/token/ERC1155/IERC1155.sol';
+import '@openzeppelin/contracts/utils/math/SafeMath.sol';
+import '@openzeppelin/contracts/utils/math/Math.sol';
 
 import './Governable.sol';
 import './utils/ERC1155NaiveReceiver.sol';
@@ -51,7 +51,7 @@ contract HomoraBank is Governable, ERC1155NaiveReceiver, IBank {
 
   uint private constant _NOT_ENTERED = 1;
   uint private constant _ENTERED = 2;
-  uint private constant _NO_ID = uint(-1);
+  uint private constant _NO_ID = uint256(int(-1));
   address private constant _NO_ADDRESS = address(1);
 
   struct Bank {
@@ -412,7 +412,7 @@ contract HomoraBank is Governable, ERC1155NaiveReceiver, IBank {
     bank.index = uint8(allBanks.length);
     bank.cToken = cToken;
     IERC20(token).safeApprove(cToken, 0);
-    IERC20(token).safeApprove(cToken, uint(-1));
+    IERC20(token).safeApprove(cToken, uint256(int(-1)));
     allBanks.push(token);
     emit AddBank(token, cToken);
   }
@@ -542,7 +542,7 @@ contract HomoraBank is Governable, ERC1155NaiveReceiver, IBank {
     uint totalDebt = bank.totalDebt;
     uint oldShare = pos.debtShareOf[token];
     uint oldDebt = oldShare.mul(totalDebt).ceilDiv(totalShare);
-    if (amountCall == uint(-1)) {
+    if (amountCall == uint256(int(-1))) {
       amountCall = oldDebt;
     }
     uint paid = doRepay(token, doERC20TransferIn(token, amountCall));
@@ -598,7 +598,7 @@ contract HomoraBank is Governable, ERC1155NaiveReceiver, IBank {
     Position storage pos = positions[POSITION_ID];
     require(collToken == pos.collToken, 'invalid collateral token');
     require(collId == pos.collId, 'invalid collateral token');
-    if (amount == uint(-1)) {
+    if (amount == uint256(int(-1))) {
       amount = pos.collateralSize;
     }
     pos.collateralSize = pos.collateralSize.sub(amount);

@@ -1,0 +1,2915 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/Governable.sol": {
+      "lastModificationDate": 1627024673725,
+      "contentHash": "16839394d37294fb163d8777cf6e4c1e",
+      "sourceName": "contracts/Governable.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/proxy/utils/Initializable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "Governable"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/proxy/utils/Initializable.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "cbb8386f0120d46d66ff42dffbbc16c1",
+      "sourceName": "@openzeppelin/contracts/proxy/utils/Initializable.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/wrapper/WLiquidityGauge.sol": {
+      "lastModificationDate": 1627029196365,
+      "contentHash": "9ef8a93ed54a6507a5d6b60066bb1a89",
+      "sourceName": "contracts/wrapper/WLiquidityGauge.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "../Governable.sol",
+        "../utils/HomoraMath.sol",
+        "../../interfaces/IERC20Wrapper.sol",
+        "../../interfaces/ICurveRegistry.sol",
+        "../../interfaces/ILiquidityGauge.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ILiquidityGaugeMinter",
+        "WLiquidityGauge"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "bb9aeebc72abd49471387e45201a9f34",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155.sol",
+        "./IERC1155Receiver.sol",
+        "./extensions/IERC1155MetadataURI.sol",
+        "../../utils/Address.sol",
+        "../../utils/Context.sol",
+        "../../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+      "lastModificationDate": 1626987814623,
+      "contentHash": "d37406082a74a9b6b114de522fcb6349",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol",
+        "../../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "53fbff678f378956efcb207fa748eaa6",
+      "sourceName": "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/utils/HomoraMath.sol": {
+      "lastModificationDate": 1627026135607,
+      "contentHash": "40471af2b32ab4fdff99f9c3d0c1fbe9",
+      "sourceName": "contracts/utils/HomoraMath.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "HomoraMath"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IERC20Wrapper.sol": {
+      "lastModificationDate": 1627024291758,
+      "contentHash": "969d1d7bed26d4b46c96a52200d1ff72",
+      "sourceName": "interfaces/IERC20Wrapper.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IERC20Wrapper"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/ICurveRegistry.sol": {
+      "lastModificationDate": 1627024276405,
+      "contentHash": "dbcfac4bf11bbe828c9010c162c6d596",
+      "sourceName": "interfaces/ICurveRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ICurveRegistry"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/ILiquidityGauge.sol": {
+      "lastModificationDate": 1627024310966,
+      "contentHash": "755dfc8753b831ef7a0f4bb211040ea3",
+      "sourceName": "interfaces/ILiquidityGauge.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ILiquidityGauge"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "bcbcd549c9bfc2da42e5426780ce4e4e",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC1155"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "82e386b6255dba9eb011192f66eb78b6",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC1155Receiver"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol": {
+      "lastModificationDate": 1626987814623,
+      "contentHash": "f67c3445291b9506fdff7d6527c9e552",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC1155.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC1155MetadataURI"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "1ea1589528625ace210951bc8cd186c9",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "07f148e0d44b2ffc23b3ae6dd6e38cfb",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "a9a5319dff9088c6ffe757ea1c2a6729",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "9a04322bb8f6b8f2767d8358d1d2537b",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "0eac3e1a83ee62326ca007811285b274",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "5365090efc586b728719e562ebfed0d6",
+      "sourceName": "@openzeppelin/contracts/utils/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IWLiquidityGauge.sol": {
+      "lastModificationDate": 1627024651520,
+      "contentHash": "4e06ed35761a02116887b58cabcc4ccd",
+      "sourceName": "interfaces/IWLiquidityGauge.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./IERC20Wrapper.sol",
+        "./ICurveRegistry.sol",
+        "./ILiquidityGauge.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IWLiquidityGauge"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/spell/CurveSpellV1.sol": {
+      "lastModificationDate": 1627060688047,
+      "contentHash": "3e0cf423ff3bb6713af8abe0dfbf3e24",
+      "sourceName": "contracts/spell/CurveSpellV1.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "./WhitelistSpell.sol",
+        "../utils/HomoraMath.sol",
+        "../../interfaces/ICurvePool.sol",
+        "../../interfaces/ICurveRegistry.sol",
+        "../../interfaces/IWLiquidityGauge.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "CurveSpellV1"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/spell/WhitelistSpell.sol": {
+      "lastModificationDate": 1627026268598,
+      "contentHash": "968e534aafe7d46d1ec01c734f511f98",
+      "sourceName": "contracts/spell/WhitelistSpell.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BasicSpell.sol",
+        "../Governable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "WhitelistSpell"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/ICurvePool.sol": {
+      "lastModificationDate": 1627024271672,
+      "contentHash": "b9ce359add4179a1258ae9842cb34aeb",
+      "sourceName": "interfaces/ICurvePool.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ICurvePool"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/spell/BasicSpell.sol": {
+      "lastModificationDate": 1627034247643,
+      "contentHash": "76c725cfef2801384233433aac03cb29",
+      "sourceName": "contracts/spell/BasicSpell.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "../utils/ERC1155NaiveReceiver.sol",
+        "../../interfaces/IBank.sol",
+        "../../interfaces/IWERC20.sol",
+        "../../interfaces/IWETH.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "BasicSpell"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/utils/ERC1155NaiveReceiver.sol": {
+      "lastModificationDate": 1627060908462,
+      "contentHash": "8207e29048c1ca1fa536d73f62e827a0",
+      "sourceName": "contracts/utils/ERC1155NaiveReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Receiver.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ERC1155NaiveReceiver"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IBank.sol": {
+      "lastModificationDate": 1627024177076,
+      "contentHash": "796b08f212baf2a232f447f8199af834",
+      "sourceName": "interfaces/IBank.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IBank"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IWERC20.sol": {
+      "lastModificationDate": 1627024639348,
+      "contentHash": "ce49a28c95792d28da8658fa90da9ea0",
+      "sourceName": "interfaces/IWERC20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+        "./IERC20Wrapper.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IWERC20"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IWETH.sol": {
+      "lastModificationDate": 1627024579646,
+      "contentHash": "4ad10c57e4a41d17145266564ae831ec",
+      "sourceName": "interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/token/ERC1155/utils/ERC1155Receiver.sol": {
+      "lastModificationDate": 1626987814623,
+      "contentHash": "de467e2231a0f5a8ec4c03d572a853d7",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC1155Receiver.sol",
+        "../../../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155Receiver"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/CurveOracle.sol": {
+      "lastModificationDate": 1627060645216,
+      "contentHash": "14317fd67a8625e60aa7ce9f79337e48",
+      "sourceName": "contracts/oracle/CurveOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "./UsingBaseOracle.sol",
+        "../../interfaces/IBaseOracle.sol",
+        "../../interfaces/ICurvePool.sol",
+        "../../interfaces/ICurveRegistry.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "CurveOracle",
+        "IERC20Decimal"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/UsingBaseOracle.sol": {
+      "lastModificationDate": 1627027106731,
+      "contentHash": "689de128c153434d8aaa219ab014bce3",
+      "sourceName": "contracts/oracle/UsingBaseOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IBaseOracle.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "UsingBaseOracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IBaseOracle.sol": {
+      "lastModificationDate": 1627024178722,
+      "contentHash": "2493665631f21d1408388933f5b5a3cf",
+      "sourceName": "interfaces/IBaseOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IBaseOracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/UniswapV2Oracle.sol": {
+      "lastModificationDate": 1627027099290,
+      "contentHash": "68962888141a339fe04b6f412d4cec55",
+      "sourceName": "contracts/oracle/UniswapV2Oracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "./UsingBaseOracle.sol",
+        "../utils/HomoraMath.sol",
+        "../../interfaces/IBaseOracle.sol",
+        "../../interfaces/IUniswapV2Pair.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "UniswapV2Oracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IUniswapV2Pair.sol": {
+      "lastModificationDate": 1627024555939,
+      "contentHash": "8eb079d1c2d194dc39e3147ea21890b4",
+      "sourceName": "interfaces/IUniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Pair"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/spell/UniswapV2SpellV1.sol": {
+      "lastModificationDate": 1627068873277,
+      "contentHash": "bf60112733691fd4543993fd797f703b",
+      "sourceName": "contracts/spell/UniswapV2SpellV1.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "./WhitelistSpell.sol",
+        "../utils/HomoraMath.sol",
+        "../../interfaces/IUniswapV2Factory.sol",
+        "../../interfaces/IUniswapV2Router02.sol",
+        "../../interfaces/IUniswapV2Pair.sol",
+        "../../interfaces/IWStakingRewards.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "UniswapV2SpellV1"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IUniswapV2Factory.sol": {
+      "lastModificationDate": 1627024547867,
+      "contentHash": "f8f8d6c1d9b6c386eac09d37191b362d",
+      "sourceName": "interfaces/IUniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Factory"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IUniswapV2Router02.sol": {
+      "lastModificationDate": 1627024566139,
+      "contentHash": "59c247eeb0eaa29a7129736a7a1d6ab5",
+      "sourceName": "interfaces/IUniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IUniswapV2Router01.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IUniswapV2Router02"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IWStakingRewards.sol": {
+      "lastModificationDate": 1627024665261,
+      "contentHash": "a9631b91510ef86d99a92311fe814c21",
+      "sourceName": "interfaces/IWStakingRewards.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+        "./IERC20Wrapper.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IWStakingRewards"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IUniswapV2Router01.sol": {
+      "lastModificationDate": 1627024561175,
+      "contentHash": "f997f7a041ae572fe37f3da189d8ecf9",
+      "sourceName": "interfaces/IUniswapV2Router01.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IUniswapV2Router01"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/wrapper/WStakingRewards.sol": {
+      "lastModificationDate": 1627029313384,
+      "contentHash": "57c3292d8822bf81f81e16d21f6e8c83",
+      "sourceName": "contracts/wrapper/WStakingRewards.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "../utils/HomoraMath.sol",
+        "../../interfaces/IERC20Wrapper.sol",
+        "../../interfaces/IStakingRewards.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "WStakingRewards"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IStakingRewards.sol": {
+      "lastModificationDate": 1627024328608,
+      "contentHash": "b23ce523da0deb26244698006a63573a",
+      "sourceName": "interfaces/IStakingRewards.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IStakingRewards"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/wrapper/WMasterChef.sol": {
+      "lastModificationDate": 1627029259881,
+      "contentHash": "a90a5d4c2f0866f5dfe92852e22c7387",
+      "sourceName": "contracts/wrapper/WMasterChef.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "../utils/HomoraMath.sol",
+        "../../interfaces/IERC20Wrapper.sol",
+        "../../interfaces/IMasterChef.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "WMasterChef"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IMasterChef.sol": {
+      "lastModificationDate": 1627024314729,
+      "contentHash": "5867a144c2cfcbc03460253dee2dc546",
+      "sourceName": "interfaces/IMasterChef.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IMasterChef"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IWMasterChef.sol": {
+      "lastModificationDate": 1627024660566,
+      "contentHash": "4cfccf25ece8e978dc6985740a00e395",
+      "sourceName": "interfaces/IWMasterChef.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./IERC20Wrapper.sol",
+        "./IMasterChef.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IWMasterChef"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/spell/SushiswapSpellV1.sol": {
+      "lastModificationDate": 1627063242539,
+      "contentHash": "34342a1b888e1c3ad2cb9d0d1181fd30",
+      "sourceName": "contracts/spell/SushiswapSpellV1.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "./WhitelistSpell.sol",
+        "../utils/HomoraMath.sol",
+        "../../interfaces/IUniswapV2Factory.sol",
+        "../../interfaces/IUniswapV2Router02.sol",
+        "../../interfaces/IUniswapV2Pair.sol",
+        "../../interfaces/IWMasterChef.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "SushiswapSpellV1"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/ERC20KP3ROracle.sol": {
+      "lastModificationDate": 1627033749469,
+      "contentHash": "791cce7a7a11bb1470f580cf18c424d3",
+      "sourceName": "contracts/oracle/ERC20KP3ROracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BaseKP3ROracle.sol",
+        "../../interfaces/IBaseOracle.sol",
+        "../../interfaces/IKeep3rV1Oracle.sol",
+        "../../interfaces/IUniswapV2Factory.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ERC20KP3ROracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/BaseKP3ROracle.sol": {
+      "lastModificationDate": 1627027020135,
+      "contentHash": "5dab4f5a70e4f1fe3a7464864a35715c",
+      "sourceName": "contracts/oracle/BaseKP3ROracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/proxy/utils/Initializable.sol",
+        "../../interfaces/IKeep3rV1Oracle.sol",
+        "../../interfaces/IUniswapV2Pair.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "BaseKP3ROracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IKeep3rV1Oracle.sol": {
+      "lastModificationDate": 1627024307093,
+      "contentHash": "268df4b584145777b18f133981c3f496",
+      "sourceName": "interfaces/IKeep3rV1Oracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IKeep3rV1Oracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/spell/HouseHoldSpell.sol": {
+      "lastModificationDate": 1627026359227,
+      "contentHash": "c8ea32b2df1cef38754eee0f7679ee44",
+      "sourceName": "contracts/spell/HouseHoldSpell.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./BasicSpell.sol",
+        "../../interfaces/IBank.sol",
+        "../../interfaces/IWETH.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "HouseHoldSpell"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/SafeBoxETH.sol": {
+      "lastModificationDate": 1627030000250,
+      "contentHash": "127841d50ff1e89b9ebdf76f0e5027ad",
+      "sourceName": "contracts/SafeBoxETH.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "./Governable.sol",
+        "../interfaces/ICErc20.sol",
+        "../interfaces/IWETH.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "SafeBoxETH"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "acad756301f0fb200ecc66138e8cd5c5",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/utils/cryptography/MerkleProof.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "88f50e7054a1be7b6c150c50c3552f9b",
+      "sourceName": "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MerkleProof"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/ICErc20.sol": {
+      "lastModificationDate": 1627024212827,
+      "contentHash": "a877f381709869effbe13a7dfe68bfd8",
+      "sourceName": "interfaces/ICErc20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ICErc20"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1626987814623,
+      "contentHash": "aa1be06992a99bb7393b26a6af3c4dfb",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/SafeBox.sol": {
+      "lastModificationDate": 1627029983171,
+      "contentHash": "20240a653456835b730dcaf278c8787f",
+      "sourceName": "contracts/SafeBox.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "./Governable.sol",
+        "../interfaces/ICErc20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "SafeBox"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/wrapper/WERC20.sol": {
+      "lastModificationDate": 1627034158011,
+      "contentHash": "cae163760354eaaf63e87083983f8e33",
+      "sourceName": "contracts/wrapper/WERC20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "../../interfaces/IWERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "WERC20"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/HomoraBank.sol": {
+      "lastModificationDate": 1627027376783,
+      "contentHash": "941b74213e01f18804f9a4d346ae0fee",
+      "sourceName": "contracts/HomoraBank.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "./Governable.sol",
+        "./utils/ERC1155NaiveReceiver.sol",
+        "../interfaces/IBank.sol",
+        "../interfaces/ICErc20.sol",
+        "../interfaces/IOracle.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "HomoraBank",
+        "HomoraCaster",
+        "HomoraSafeMath"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1626987814585,
+      "contentHash": "4f2b7cfee254db30f906ebcd2e2b1d32",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IOracle.sol": {
+      "lastModificationDate": 1627024324966,
+      "contentHash": "ef5b6fb2189059c74a088c7ff8a00151",
+      "sourceName": "interfaces/IOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IOracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/ProxyOracle.sol": {
+      "lastModificationDate": 1627027082372,
+      "contentHash": "b1c4481e1119fd59e1fff10622aa503a",
+      "sourceName": "contracts/oracle/ProxyOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "../Governable.sol",
+        "../../interfaces/IOracle.sol",
+        "../../interfaces/IBaseOracle.sol",
+        "../../interfaces/IERC20Wrapper.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ProxyOracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/spell/BalancerSpellV1.sol": {
+      "lastModificationDate": 1627027200763,
+      "contentHash": "3cdea5a6602d5131ac657cd8b9eaa863",
+      "sourceName": "contracts/spell/BalancerSpellV1.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "./WhitelistSpell.sol",
+        "../utils/HomoraMath.sol",
+        "../../interfaces/IBalancerPool.sol",
+        "../../interfaces/IWStakingRewards.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "BalancerSpellV1"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/IBalancerPool.sol": {
+      "lastModificationDate": 1627024174860,
+      "contentHash": "b03717cf44b4ff226b5f3a8487ffb519",
+      "sourceName": "interfaces/IBalancerPool.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IBalancerPool"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/BalancerPairOracle.sol": {
+      "lastModificationDate": 1627026979070,
+      "contentHash": "c1b54434ce64e165e60dbdf6be6a39f4",
+      "sourceName": "contracts/oracle/BalancerPairOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "./UsingBaseOracle.sol",
+        "../utils/BNum.sol",
+        "../../interfaces/IBaseOracle.sol",
+        "../../interfaces/IBalancerPool.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "BalancerPairOracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/utils/BNum.sol": {
+      "lastModificationDate": 1627060902220,
+      "contentHash": "1039655be366ac8f1eee7af19fc78ea6",
+      "sourceName": "contracts/utils/BNum.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BConst.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "BNum"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/utils/BConst.sol": {
+      "lastModificationDate": 1627060897388,
+      "contentHash": "cf5e1678cbb151b0f96e95e50bc2e753",
+      "sourceName": "contracts/utils/BConst.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "BConst"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/ChainlinkAdapterOracle.sol": {
+      "lastModificationDate": 1627064876801,
+      "contentHash": "cefc39335c27ac2704bdb75ff388a237",
+      "sourceName": "contracts/oracle/ChainlinkAdapterOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "../Governable.sol",
+        "../../interfaces/IBaseOracle.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ChainlinkAdapterOracle",
+        "ChainlinkDetailedERC20",
+        "IAggregatorV3Interface"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/BandAdapterOracle.sol": {
+      "lastModificationDate": 1627026998530,
+      "contentHash": "695a9483f624b67ae83365df438ea7c8",
+      "sourceName": "contracts/oracle/BandAdapterOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "../Governable.sol",
+        "../../interfaces/IBaseOracle.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "BandAdapterOracle",
+        "BandDetailedERC20",
+        "IStdReference"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/AggregatorOracle.sol": {
+      "lastModificationDate": 1627026919166,
+      "contentHash": "992606fa1caefbe2c9a6e64129ccfb0c",
+      "sourceName": "contracts/oracle/AggregatorOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "../Governable.sol",
+        "../../interfaces/IBaseOracle.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "AggregatorOracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/mock/MockCErc20.sol": {
+      "lastModificationDate": 1627060543749,
+      "contentHash": "2976a0e030f934f066392e178d68482c",
+      "sourceName": "contracts/mock/MockCErc20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "../../interfaces/ICErc20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "MockCErc20"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/mock/MockCErc20_2.sol": {
+      "lastModificationDate": 1627060502847,
+      "contentHash": "3a5f630e8d22fafff4195a5880932b01",
+      "sourceName": "contracts/mock/MockCErc20_2.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "../../interfaces/ICErc20_2.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "MockCErc20_2"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/interfaces/ICErc20_2.sol": {
+      "lastModificationDate": 1627024184469,
+      "contentHash": "e75564a41d6fe5b90a019f68d706822a",
+      "sourceName": "interfaces/ICErc20_2.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ICErc20_2"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/IbETHRouterV2.sol": {
+      "lastModificationDate": 1627060602198,
+      "contentHash": "f1616b3df6bc49b25f2cbdeae9e878cc",
+      "sourceName": "contracts/IbETHRouterV2.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "./utils/HomoraMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IbETHRouterV2",
+        "IbETHRouterV2IbETHv2",
+        "IbETHRouterV2UniswapFactory",
+        "IbETHRouterV2UniswapPair",
+        "IbETHRouterV2UniswapRouter"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/mock/MockERC20.sol": {
+      "lastModificationDate": 1627029852789,
+      "contentHash": "fe499df26a6015b2f0ceca73674c2229",
+      "sourceName": "contracts/mock/MockERC20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "MockERC20"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/SimpleOracle.sol": {
+      "lastModificationDate": 1627033762230,
+      "contentHash": "9713176acb4d4db5af5d570b4fb49739",
+      "sourceName": "contracts/oracle/SimpleOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Governable.sol",
+        "../../interfaces/IBaseOracle.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "SimpleOracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/oracle/CoreOracle.sol": {
+      "lastModificationDate": 1627027048645,
+      "contentHash": "b124cf6d6d2cb4297c53a3fb20395bcc",
+      "sourceName": "contracts/oracle/CoreOracle.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IBaseOracle.sol",
+        "../Governable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "CoreOracle"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/mock/MockUniswapV2Factory.sol": {
+      "lastModificationDate": 1627027723453,
+      "contentHash": "0da9f01b3779c078c739626dd7bf000b",
+      "sourceName": "contracts/mock/MockUniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IUniswapV2Callee",
+        "MockUniswapV2Factory",
+        "MockUniswapV2FactoryIERC20",
+        "MockUniswapV2FactoryIUniswapV2ERC20",
+        "MockUniswapV2FactoryIUniswapV2Factory",
+        "MockUniswapV2FactoryIUniswapV2Pair",
+        "MockUniswapV2FactoryMah",
+        "MockUniswapV2FactorySafeMath",
+        "MockUniswapV2FactoryUniswapV2Pair",
+        "UQ112x112",
+        "UniswapV2ERC20"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/mock/MockUniswapV2Router02.sol": {
+      "lastModificationDate": 1627033898194,
+      "contentHash": "b1b2d44936f1c556ac6c9344603548f9",
+      "sourceName": "contracts/mock/MockUniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IERC20",
+        "MockUniswapV2Router02",
+        "MockUniswapV2Router02IUniswapV2Factory",
+        "MockUniswapV2Router02IUniswapV2Pair",
+        "MockUniswapV2Router02IUniswapV2Router01",
+        "MockUniswapV2Router02IUniswapV2Router02",
+        "MockUniswapV2Router02IWETH",
+        "MockUniswapV2Router02SafeMath",
+        "MockUniswapV2Router02TransferHelper",
+        "MockUniswapV2Router02UniswapV2Library"
+      ]
+    },
+    "/Users/sagarbehara/Work/alpha-homora-v2-public-contract/contracts/mock/MockWETH.sol": {
+      "lastModificationDate": 1627027467713,
+      "contentHash": "5cf4b3a8580f5c66585d2ccebf8c119f",
+      "sourceName": "contracts/mock/MockWETH.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "MockWETH"
+      ]
+    }
+  }
+}

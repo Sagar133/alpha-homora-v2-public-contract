@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 // https://github.com/balancer-labs/balancer-core/blob/master/contracts/BConst.sol
 
 // This program is free software: you can redistribute it and/or modify
@@ -13,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
 contract BConst {
   uint public constant BONE = 10**18;

@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 pragma experimental ABIEncoderV2;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/IERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/math/SafeMath.sol';
+import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
+import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 
 import './WhitelistSpell.sol';
 import '../utils/HomoraMath.sol';
@@ -26,7 +26,7 @@ contract UniswapV2SpellV1 is WhitelistSpell {
     IBank _bank,
     address _werc20,
     IUniswapV2Router02 _router
-  ) public WhitelistSpell(_bank, _werc20, _router.WETH()) {
+  ) WhitelistSpell(_bank, _werc20, _router.WETH()) {
     router = _router;
     factory = IUniswapV2Factory(_router.factory());
   }
@@ -260,13 +260,13 @@ contract UniswapV2SpellV1 is WhitelistSpell {
     uint amtLPRepay = amt.amtLPRepay;
 
     // 2. Compute repay amount if MAX_INT is supplied (max debt)
-    if (amtARepay == uint(-1)) {
+    if (amtARepay == uint256(int(-1))) {
       amtARepay = bank.borrowBalanceCurrent(positionId, tokenA);
     }
-    if (amtBRepay == uint(-1)) {
+    if (amtBRepay == uint256(int(-1))) {
       amtBRepay = bank.borrowBalanceCurrent(positionId, tokenB);
     }
-    if (amtLPRepay == uint(-1)) {
+    if (amtLPRepay == uint256(int(-1))) {
       amtLPRepay = bank.borrowBalanceCurrent(positionId, lp);
     }
 
@@ -386,8 +386,8 @@ contract UniswapV2SpellV1 is WhitelistSpell {
     require(collToken == wstaking, 'collateral token & wstaking mismatched');
 
     // 1. Take out collateral
-    bank.takeCollateral(wstaking, collId, uint(-1));
-    IWStakingRewards(wstaking).burn(collId, uint(-1));
+    bank.takeCollateral(wstaking, collId, uint256(int(-1)));
+    IWStakingRewards(wstaking).burn(collId, uint256(int(-1)));
 
     // 2. put collateral
     uint amount = IERC20(lp).balanceOf(address(this));

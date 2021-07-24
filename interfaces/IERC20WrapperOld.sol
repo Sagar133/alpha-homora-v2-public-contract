@@ -1,4 +1,5 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12;
 
 interface IERC20WrapperOld {
   /// @dev Return the underlying ERC-20 for the given ERC-1155 token id.

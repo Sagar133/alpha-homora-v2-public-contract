@@ -1,6 +1,7 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.2.0/contracts/math/SafeMath.sol';
+import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 
 import '../Governable.sol';
 import '../../interfaces/IBaseOracle.sol';
@@ -50,8 +51,10 @@ contract ChainlinkAdapterOracle is IBaseOracle, Governable {
   event SetMaxDelayTime(address token, uint maxDelayTime);
   event SetRefETHUSD(address ref);
 
-  address public constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
-  address public refETHUSD = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419; // ETH-USD price reference
+  // address public constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
+  // address public refETHUSD = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419; // ETH-USD price reference
+  address public constant WETH = 0x4DfAe612aaCB5b448C12A591cD0879bFa2e51d62;
+  address public refETHUSD = 0x0715A7794a1dc8e42615F059dD6e406A6594651A;
   mapping(address => address) public refsETH; // Mapping from token address to ETH price reference
   mapping(address => address) public refsUSD; // Mapping from token address to USD price reference
   mapping(address => uint) public maxDelayTimes; // Mapping from token address to max delay time

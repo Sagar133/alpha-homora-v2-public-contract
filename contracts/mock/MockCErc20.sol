@@ -1,7 +1,8 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/IERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/math/SafeMath.sol';
+import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
+import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 
 import '../../interfaces/ICErc20.sol';
 
@@ -14,7 +15,7 @@ contract MockCErc20 is ICErc20 {
   mapping(address => uint) public borrows;
   mapping(address => uint) public lastBlock;
 
-  constructor(IERC20 _token) public {
+  constructor(IERC20 _token) {
     token = _token;
   }
 
@@ -42,11 +43,11 @@ contract MockCErc20 is ICErc20 {
   }
 
   function borrowBalanceCurrent(address account) public override returns (uint) {
-    uint timePast = now - lastBlock[account];
+    uint timePast = block.timestamp - lastBlock[account];
     if (timePast > 0) {
       uint interest = borrows[account].mul(interestPerYear).div(100e16).mul(timePast).div(365 days);
       borrows[account] = borrows[account].add(interest);
-      lastBlock[account] = now;
+      lastBlock[account] = block.timestamp;
     }
     return borrows[account];
   }

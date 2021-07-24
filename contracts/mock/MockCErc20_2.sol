@@ -1,8 +1,9 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12;
 
 // import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/IERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/SafeERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/math/SafeMath.sol';
+import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
+import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 
 import '../../interfaces/ICErc20_2.sol';
 
@@ -15,7 +16,7 @@ contract MockCErc20_2 is ICErc20_2 {
   uint public totalSupply = 0;
   mapping(address => uint) public override balanceOf;
 
-  constructor(IERC20 _token) public {
+  constructor(IERC20 _token) {
     token = _token;
   }
 
@@ -23,7 +24,7 @@ contract MockCErc20_2 is ICErc20_2 {
     mintRate = _mintRate;
   }
 
-  function underlying() external override returns (address) {
+  function underlying() external view override returns (address) {
     return address(token);
   }
 

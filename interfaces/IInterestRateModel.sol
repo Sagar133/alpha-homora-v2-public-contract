@@ -1,4 +1,5 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12;
 
 interface IInterestRateModel {
   /// @dev Return the interest rate per year in basis point given the parameters.

@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/proxy/Initializable.sol';
+//import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/proxy/Initializable.sol';
+import '@openzeppelin/contracts/proxy/utils/Initializable.sol';
 
 contract Governable is Initializable {
   event SetGovernor(address governor);

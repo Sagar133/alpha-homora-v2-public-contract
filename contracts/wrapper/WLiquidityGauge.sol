@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC1155/ERC1155.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/SafeERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/utils/ReentrancyGuard.sol';
+import '@openzeppelin/contracts/token/ERC1155/ERC1155.sol';
+import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
+import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 
 import '../Governable.sol';
 import '../utils/HomoraMath.sol';
@@ -100,7 +100,7 @@ contract WLiquidityGauge is ERC1155('WLiquidityGauge'), ReentrancyGuard, IERC20W
     require(gauge != address(0), 'no gauge');
     IERC20 lpToken = IERC20(ILiquidityGauge(gauge).lp_token());
     lpToken.approve(gauge, 0);
-    lpToken.approve(gauge, uint(-1));
+    lpToken.approve(gauge, uint256(int(-1)));
     gauges[pid][gid] = GaugeInfo({impl: ILiquidityGauge(gauge), accCrvPerShare: 0});
   }
 
@@ -129,7 +129,7 @@ contract WLiquidityGauge is ERC1155('WLiquidityGauge'), ReentrancyGuard, IERC20W
   /// @param id Token id to burn
   /// @param amount Token amount to burn
   function burn(uint id, uint amount) external nonReentrant returns (uint) {
-    if (amount == uint(-1)) {
+    if (amount == uint256(int(-1))) {
       amount = balanceOf(msg.sender, id);
     }
     (uint pid, uint gid, uint stCrvPerShare) = decodeId(id);

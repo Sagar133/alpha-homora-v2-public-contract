@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 pragma experimental ABIEncoderV2;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/token/ERC20/IERC20.sol';
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/math/SafeMath.sol';
+import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
+import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 
 import './WhitelistSpell.sol';
 import '../utils/HomoraMath.sol';
@@ -304,7 +304,7 @@ contract CurveSpellV1 is WhitelistSpell {
     // 1. Compute repay amount if MAX_INT is supplied (max debt)
     uint[2] memory actualAmtsRepay;
     for (uint i = 0; i < 2; i++) {
-      actualAmtsRepay[i] = amtsRepay[i] == uint(-1)
+      actualAmtsRepay[i] = amtsRepay[i] == uint256(int(-1))
         ? bank.borrowBalanceCurrent(positionId, tokens[i])
         : amtsRepay[i];
     }
@@ -375,7 +375,7 @@ contract CurveSpellV1 is WhitelistSpell {
     // 1. Compute repay amount if MAX_INT is supplied (max debt)
     uint[3] memory actualAmtsRepay;
     for (uint i = 0; i < 3; i++) {
-      actualAmtsRepay[i] = amtsRepay[i] == uint(-1)
+      actualAmtsRepay[i] = amtsRepay[i] == uint256(int(-1))
         ? bank.borrowBalanceCurrent(positionId, tokens[i])
         : amtsRepay[i];
     }
@@ -447,7 +447,7 @@ contract CurveSpellV1 is WhitelistSpell {
     // 1. Compute repay amount if MAX_INT is supplied (max debt)
     uint[4] memory actualAmtsRepay;
     for (uint i = 0; i < 4; i++) {
-      actualAmtsRepay[i] = amtsRepay[i] == uint(-1)
+      actualAmtsRepay[i] = amtsRepay[i] == uint256(int(-1))
         ? bank.borrowBalanceCurrent(positionId, tokens[i])
         : amtsRepay[i];
     }

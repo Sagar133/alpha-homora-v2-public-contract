@@ -1,0 +1,219 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "BNum",
+  "sourceName": "contracts/utils/BNum.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "BONE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "BPOW_PRECISION",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "EXIT_FEE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "INIT_POOL_SUPPLY",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_BOUND_TOKENS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_BPOW_BASE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_FEE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_IN_RATIO",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_OUT_RATIO",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_TOTAL_WEIGHT",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_WEIGHT",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MIN_BALANCE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MIN_BOUND_TOKENS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MIN_BPOW_BASE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MIN_FEE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MIN_WEIGHT",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5061031d806100206000396000f3fe608060405234801561001057600080fd5b50600436106100e05760003560e01c8063b7b800a411610087578063b7b800a41461013b578063ba019dab14610143578063bc063e1a1461014b578063bc694ea214610153578063c36596a61461010b578063c6580d121461015b578063e4a28a52146100e5578063ec09302114610163576100e0565b806309a3bbe4146100e5578063189d00ca14610103578063218b53821461010b57806376c7a3c714610113578063867378c51461011b5780639381cd2b14610123578063992e2a921461012b578063b0e0d13614610133575b600080fd5b6100ed61016b565b6040516100fa919061025a565b60405180910390f35b6100ed610181565b6100ed610198565b6100ed6101a4565b6100ed6101b9565b6100ed6101d0565b6100ed6101e3565b6100ed610201565b6100ed610206565b6100ed61020b565b6100ed610210565b6100ed610223565b6100ed610242565b6100ed610247565b61017e670de0b6b3a7640000603261029b565b81565b61017e6402540be400670de0b6b3a764000061027b565b670de0b6b3a764000081565b61017e620f4240670de0b6b3a764000061027b565b61017e64e8d4a51000670de0b6b3a764000061027b565b61017e670de0b6b3a7640000606461029b565b6101f66003670de0b6b3a764000061027b565b61017e906001610263565b600881565b600281565b600181565b61017e600a670de0b6b3a764000061027b565b6001610238670de0b6b3a7640000600261029b565b61017e91906102ba565b600081565b61017e6002670de0b6b3a764000061027b565b90815260200190565b60008219821115610276576102766102d1565b500190565b60008261029657634e487b7160e01b81526012600452602481fd5b500490565b60008160001904831182151516156102b5576102b56102d1565b500290565b6000828210156102cc576102cc6102d1565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220b5c56e3b50210b8cb534b5be939020ceb882fe9e2ab9f3199ab1ae3ad928af9164736f6c63430008000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100e05760003560e01c8063b7b800a411610087578063b7b800a41461013b578063ba019dab14610143578063bc063e1a1461014b578063bc694ea214610153578063c36596a61461010b578063c6580d121461015b578063e4a28a52146100e5578063ec09302114610163576100e0565b806309a3bbe4146100e5578063189d00ca14610103578063218b53821461010b57806376c7a3c714610113578063867378c51461011b5780639381cd2b14610123578063992e2a921461012b578063b0e0d13614610133575b600080fd5b6100ed61016b565b6040516100fa919061025a565b60405180910390f35b6100ed610181565b6100ed610198565b6100ed6101a4565b6100ed6101b9565b6100ed6101d0565b6100ed6101e3565b6100ed610201565b6100ed610206565b6100ed61020b565b6100ed610210565b6100ed610223565b6100ed610242565b6100ed610247565b61017e670de0b6b3a7640000603261029b565b81565b61017e6402540be400670de0b6b3a764000061027b565b670de0b6b3a764000081565b61017e620f4240670de0b6b3a764000061027b565b61017e64e8d4a51000670de0b6b3a764000061027b565b61017e670de0b6b3a7640000606461029b565b6101f66003670de0b6b3a764000061027b565b61017e906001610263565b600881565b600281565b600181565b61017e600a670de0b6b3a764000061027b565b6001610238670de0b6b3a7640000600261029b565b61017e91906102ba565b600081565b61017e6002670de0b6b3a764000061027b565b90815260200190565b60008219821115610276576102766102d1565b500190565b60008261029657634e487b7160e01b81526012600452602481fd5b500490565b60008160001904831182151516156102b5576102b56102d1565b500290565b6000828210156102cc576102cc6102d1565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220b5c56e3b50210b8cb534b5be939020ceb882fe9e2ab9f3199ab1ae3ad928af9164736f6c63430008000033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
 import './BaseKP3ROracle.sol';
 import '../../interfaces/IBaseOracle.sol';

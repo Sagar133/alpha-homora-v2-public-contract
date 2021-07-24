@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.12;
+pragma solidity >=0.6.12;
 
-import 'OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/math/SafeMath.sol';
+import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 
 import './UsingBaseOracle.sol';
 import '../../interfaces/IBaseOracle.sol';
@@ -26,7 +26,7 @@ contract CurveOracle is UsingBaseOracle, IBaseOracle {
   mapping(address => UnderlyingToken[]) public ulTokens; // Mapping from LP token to underlying tokens
   mapping(address => address) public poolOf; // Mapping from LP token to pool
 
-  constructor(IBaseOracle _base, ICurveRegistry _registry) public UsingBaseOracle(_base) {
+  constructor(IBaseOracle _base, ICurveRegistry _registry) UsingBaseOracle(_base) {
     registry = _registry;
   }
 
@@ -53,7 +53,7 @@ contract CurveOracle is UsingBaseOracle, IBaseOracle {
     address pool = poolOf[lp];
     require(pool != address(0), 'lp is not registered');
     UnderlyingToken[] memory tokens = ulTokens[lp];
-    uint minPx = uint(-1);
+    uint minPx = uint256(int(-1));
     uint n = tokens.length;
     for (uint idx = 0; idx < n; idx++) {
       UnderlyingToken memory ulToken = tokens[idx];
@@ -62,7 +62,7 @@ contract CurveOracle is UsingBaseOracle, IBaseOracle {
       if (ulToken.decimals > 18) tokenPx = tokenPx.mul(10**(uint(ulToken.decimals) - 18));
       if (tokenPx < minPx) minPx = tokenPx;
     }
-    require(minPx != uint(-1), 'no min px');
+    require(minPx != uint256(int(-1)), 'no min px');
     // use min underlying token prices
     return minPx.mul(ICurvePool(pool).get_virtual_price()).div(1e18);
   }
