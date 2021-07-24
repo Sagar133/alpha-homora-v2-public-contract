@@ -38,15 +38,53 @@ async function main() {
     await dfynFactory.createPair(usdt.address, dai.address);
     await usdt.approve('0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506', ETH.mul(50));
     await dai.approve('0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506', ETH.mul(50));
-    console.log('LP token deployed at addr', (await dfynFactory.getPair(usdt.address, dai.address)));
+    const lpTokenAddr = await dfynFactory.getPair(usdt.address, dai.address);
+    console.log('LP token deployed at addr', lpTokenAddr);
+
+    const ChainlinkOracleFactory = await ethers.getContractFactory("ChainlinkAdapterOracle");
+    const chainlinkOracle = await ChainlinkOracleFactory.deploy();
+    await chainlinkOracle.setRefsUSD(
+        [
+          dai.address,
+          usdt.address
+        ],
+        [
+        '0x0FCAa9c899EC5A91eBc3D5Dd869De833b06fB046',
+        '0x0FCAa9c899EC5A91eBc3D5Dd869De833b06fB046'
+        ]
+    );
 
     const coreOracle = await ethers.getContractFactory("CoreOracle");
     const CoreOracle = await coreOracle.deploy();
     console.log('CoreOracle: ', CoreOracle.address);
-    
+
     const ProxyOracle = await ethers.getContractFactory("ProxyOracle");
     const proxyOracle = await ProxyOracle.deploy(CoreOracle.address);
     console.log('ProxyOracle: ', proxyOracle.address);
+
+    const UniOracleFactory = await ethers.getContractFactory("UniswapV2Oracle");
+    const uniOracle = await UniOracleFactory.deploy(CoreOracle.address);
+
+    await CoreOracle.setRoute([
+        dai.address,
+        usdt.address,
+        lpTokenAddr
+    ], [
+        chainlinkOracle.address,
+        chainlinkOracle.address,
+        uniOracle.address
+    ]);
+
+    await proxyOracle.setTokenFactors([
+            dai.address,
+            usdt.address,
+            lpTokenAddr
+        ], [
+            [10500, 9500, 10250],
+            [10500, 9500, 10250],
+            [50000, 8000, 10250],
+        ]
+    );
     
     const bank = await ethers.getContractFactory("HomoraBank");
     const hamoraBank = await bank.deploy();
