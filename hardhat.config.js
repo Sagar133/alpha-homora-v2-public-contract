@@ -1,3 +1,4 @@
+require('dotenv').config()
 const fs = require('fs');
 require("solidity-coverage");
 require("hardhat-gas-reporter");
@@ -85,7 +86,7 @@ module.exports = {
         maticMumbai: {
             url: 'https://matic-mumbai.chainstacklabs.com',
             accounts: [
-               'd8a4044182b9c2a058e9ac7af635342f3263cdce75669f6d93041f8f0ff45107'
+                process.env.PRIVATE_KEY
             ]
           },
         // mainnet: {
